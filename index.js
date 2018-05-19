@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.get('/api/whoami',(request,response)=>{
     var ip = request.headers.host;
@@ -14,4 +15,4 @@ app.get('/api/whoami',(request,response)=>{
     response.end(JSON.stringify(result));
 })
 
-app.listen(3000);
+app.listen(port);
