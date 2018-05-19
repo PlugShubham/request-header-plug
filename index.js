@@ -3,10 +3,9 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.get('/api/whoami',(request,response)=>{
-    var ip = request.headers.host;
+    var ip = request.connection.remoteAddress;
     var language = request.headers['accept-language'];
     var os = request.headers['user-agent'];
-    console.log(request.headers.host + language);
     var result={
         "ipaddress":ip,
         "language":language,
